@@ -1,0 +1,140 @@
+{# comment #} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor=#d4a3ae>
+
+        <center>
+
+        <h1> FUTURE VALUE PREDICTION </h1><br>
+        
+        <form method="POST", action="{{url_for('man')}}">
+           <b> DATE :  <input type="text", name='date', placeholder="Enter date"> <br><br>
+            <br></b>
+            <input type="submit" , value='predict!' >
+        </form>
+        
+    </center>
+
+    </body>
+</html> {% endcomment %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor=#d4a3ae>
+
+    <center>
+
+        <h1>FUTURE VALUE PREDICTION</h1><br>
+        
+        <form id="predictionForm">
+            <b>First value: <input type="date" id="dateInput" placeholder="Enter date"><br><br></b>
+            <br>
+            <input type="button" value="predict!" onclick="submitForm()">
+        </form>
+        
+    </center>
+
+    <script>
+        function submitForm() {
+            // Capture the date input value
+            var dateInput = document.getElementById('dateInput').value;
+
+            // Perform any necessary client-side validation or processing
+
+            // Submit the form asynchronously using JavaScript
+            fetch("/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: "date=" + dateInput,
+            })
+            .then(response => response.text())
+            .then(html => {
+                // Replace the current page content with the response HTML
+                document.open();
+                document.write(html);
+                document.close();
+            });
+        }
+    </script>
+
+</body>
+</html> {# endcomment #}
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor=#d4a3ae>
+
+    <center>
+
+        <h1>FUTURE VALUE PREDICTION</h1><br>
+        
+        <form id="predictionForm">
+            <b>First value: <input type="date" id="dateInput" placeholder="Enter date"><br><br></b>
+            <br>
+            <input type="button" value="predict!" onclick="submitForm()">
+        </form>
+        
+    </center>
+
+    <script>
+        function submitForm() {
+            // Capture the date input value
+            var dateInput = document.getElementById('dateInput').value;
+
+            // Perform any necessary client-side validation or processing
+
+            // Submit the form asynchronously using JavaScript
+            fetch("/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: "date=" + dateInput,
+            })
+            .then(response => response.text())
+            .then(html => {
+                // Replace the current page content with the response HTML
+                document.open();
+                document.write(html);
+                document.close();
+            });
+        }
+    </script>
+
+</body>
+</html> {# endcomment #}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="">
+  <title>stocks</title>
+</head>
+
+<body>
+    <form action="/submit" method="POST">
+      <input type="date" name="date" placeholder="Enter date">
+      <input type="submit" value="Generate Name">
+    </form>
+  </body>

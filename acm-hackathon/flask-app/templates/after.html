@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor=#a3cfb4>
+    <center>
+
+        <h1> TRADING PREDICTION </h1>
+   
+   {% if pred %}
+      <h3>Predicted close value for {{ data1 }}: {{ pred }}</h3>  //put loop to print array in pred
+      {% else %}
+      <h3>Please enter a valid date to get the predicted close value.</h3>
+      {% endif %}
+
+    </center>
+</body>
+</html>
